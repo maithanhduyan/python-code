@@ -1,0 +1,1 @@
+nssm install auto-backup  "python_path/python.exe"  "auto-backup/src/main.py"

@@ -1,0 +1,13 @@
+[BackupConfig]
+url=http://127.0.0.1:8069/web/database/manager
+password=admin
+[DownloadConfig]
+download_path=
+[LoggingConfig]
+log_file_path=
+[EmailConfig]
+to_address = recipient@example.com
+smtp_server = smtp.gmail.com
+smtp_port = 587
+smtp_username = recipient@example.com
+smtp_password = password
