@@ -1,6 +1,7 @@
 [BackupConfig]
 url=http://127.0.0.1:8069/web/database/manager
 password=admin
+database_to_backup=odoo_db
 [DownloadConfig]
 download_path=
 [LoggingConfig]

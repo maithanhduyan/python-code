@@ -1,8 +1,11 @@
+import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import logging
 from datetime import datetime
+# Lấy đường dẫn thư mục hiện tại
+current_directory = os.getcwd()
 
 def read_template(template_path):
     with open(template_path, 'r', encoding='utf-8') as template_file:

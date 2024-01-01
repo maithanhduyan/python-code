@@ -1,3 +1,4 @@
+import os
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,6 +11,10 @@ import logging
 from mail_manager import send_email
 import configparser
 
+# Lấy đường dẫn thư mục hiện tại
+current_directory = os.getcwd()
+print("Thư mục hiện tại:", current_directory)
+
 # Tạo đối tượng ConfigParser
 config = configparser.ConfigParser()
 
@@ -21,7 +26,7 @@ email_config = {
     'subject': '',
     'html_body': '',
     'status_message' : '',
-    'to_address': config.get('EmailConfig', 'to_address').split(','),
+    'to_address': config.get('EmailConfig', 'to_address'),
     'smtp_server':  config.get('EmailConfig', 'smtp_server'),
     'smtp_port': config.getint('EmailConfig', 'smtp_port'),
     'smtp_username': config.get('EmailConfig', 'smtp_username'),
@@ -61,7 +66,7 @@ def odoo_backup():
         time.sleep(1)
 
         # Nhấn nút "Backup" (hoặc tìm phần tử cần thiết)
-        driver.find_element(By.XPATH, "//button[@data-db='taya17_db']").click()
+        driver.find_element(By.XPATH, "//button[@data-db='taya_db']").click()
 
         # Chờ để đảm bảo trang web đã được tải hoàn toàn
         time.sleep(5)
@@ -112,7 +117,7 @@ if __name__ == "__main__":
     print(datetime.now(), "Running Odoo backup ...")
     logging.info("Running Odoo backup... ")
     # Tạo công việc chạy backup mỗi tuần vào Chủ nhật lúc 0 giờ
-    schedule.every().sunday.at("00:00").do(schedule_backup)
+    schedule.every().sunday.at("18:12").do(schedule_backup)
     
     # Loop : Vòng lặp chạy tác vụ
     while True:
