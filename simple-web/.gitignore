@@ -1,3 +1,43 @@
-venv
+# Virtual environment
+venv/
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
+# IDE files
+.idea/
+.vscode/
+
+# Compiled Python files
+*.pyc
+
+# Compiled C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Environment variables
+.env
+
+# Local configuration
+*.local
+*.ini
+
+# Database
+*.db
+
+# Flask migration folder
+/migrations/
+
+# Flask configuration
+instance/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
