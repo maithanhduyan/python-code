@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue System - Screen 3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+</head>
+<body>
+    <h1>Your Ticket</h1>
+    <div id="customerTicket">Your Ticket: Loading...</div>
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('enqueue', function(data) {
+            // Update the UI when a new ticket is enqueued
+            document.getElementById('customerTicket').innerText = 'Your Ticket: ' + data.ticket_id;
+        });
+    </script>
+</body>
+</html>

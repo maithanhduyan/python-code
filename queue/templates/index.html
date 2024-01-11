@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <h1>Queue System</h1>
+    
+    <form method="post" action="{{ url_for('enqueue') }}">
+        <button type="submit">Enqueue</button>
+    </form>
+    <h2>Waiting Queue</h2>
+    <ul>
+        {% for ticket in waiting_tickets %}
+            <li>
+                {{ ticket[0] }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Current Ticket: {{ processing_tickets }}</h2>
+
+    <h2>Processed Queue</h2>
+    <ul>
+        {% for ticket in processed_tickets %}
+            <li>{{ ticket[0] }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
